@@ -2,21 +2,17 @@
   <div class="page">
     <div class="left">
       <button id="btn-voltar" @click="goBack">Voltar</button>
-      <div class="cadastro">
-        <h2>Cadastro</h2>
+      <div class="login">
+        <h2>Entre com usa conta</h2>
         <form>
-          <label for="name">Nome:</label>
-          <input type="text" id="name" name="name" v-model="name" placeholder="Digite seu nome aqui">
           <label for="username">Email:</label>
           <input type="text" id="username" name="username" v-model="username" placeholder="Digite seu email aqui">
-          <label for="birthdate">Data de nascimento:</label>
-          <input type="date" id="birthdate" name="birthdate" v-model="birthdate">
           <label for="password">Senha:</label>
           <input type="password" id="password" name="password" v-model="password" placeholder="Digite sua senha aqui">
-          <label for="password-confirm">Confirmação de senha:</label>
-          <input type="password" id="password-confirm" name="password-confirm" v-model="passwordConfirm" placeholder="Confirme sua senha">
-          <button type="submit" @click.prevent="cadastro">Entrar</button>
+          <button type="submit" @click.prevent="login">Entrar</button>
         </form>
+        <h5 id="opcao-cadastro">Caso ainda não tenha a conta:</h5>
+        <button id="bnt-opcao-cadastro">Cadastro</button>
       </div>
     </div>
     <div class="right"></div>
@@ -27,15 +23,12 @@
 export default {
   data() {
     return {
-      name: '',
       username: '',
-      birthdate: '',
-      password: '',
-      passwordConfirm: ''
+      password: ''
     };
   },
   methods: {
-    cadastro() {
+    login() {
       // Lógica de autenticação aqui
     }
   }
@@ -74,7 +67,7 @@ h2{
   margin-top: -10%;
 }
 
-.cadastro {
+.login {
   width: 70%;
   margin: 80px;
   top: 0%;
@@ -85,15 +78,14 @@ h2{
   margin-top: -10%;
 }
 
-.cadastro label {
+.login label {
   display: block;
   font-weight: bold;
   margin-bottom: 10px;
 }
 
-.cadastro input[type="text"],
-.cadastro input[type="password"],
-.cadastro input[type="date"] {
+.login input[type="text"],
+.login input[type="password"] {
   width: 80%;
   padding: 8px;
   border: 2px solid #ccc;
@@ -101,7 +93,7 @@ h2{
   margin-bottom: 15px;
 }
 
-.cadastro button[type="submit"] {
+.login button[type="submit"] {
   background-color: #007AC2;
   color: #fff;
   border: none;
@@ -113,10 +105,9 @@ h2{
   margin-top: 15px;
 }
 
-.cadastro button[type="submit"]:hover {
+.login button[type="submit"]:hover {
   background-color: #0062a3;
 }
-
 #btn-voltar {
 background-color: #007AC2;
 color: #fff;
@@ -132,4 +123,23 @@ margin-left: 2%;
 #btn-voltar:hover {
 background-color: #0062a3;
 }
+#opcao-cadastro{
+  text-align: center;
+  margin-left: -17%;
+  font-weight: lighter;
+  color: rgb(98, 98, 98);
+}
+#bnt-opcao-cadastro{
+  background-color: #fff;
+  color: #0062a3;
+  border-color: #007AC2;
+  border: 10px;
+  padding: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  width: 83.7%;
+
+
+}
+
 </style>
