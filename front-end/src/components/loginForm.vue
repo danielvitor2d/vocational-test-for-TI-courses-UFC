@@ -1,6 +1,7 @@
 <template>
   <div class="page">
     <div class="left">
+      <button id="btn-voltar" @click="goBack">Voltar</button>
       <div class="login">
         <h2>Entre com usa conta</h2>
         <form>
@@ -71,7 +72,7 @@ h2{
   background-color: #fff;
   padding: 5%;
   border-radius: 0px;
-  margin-left: 20%;
+  margin-left: 6%;
   margin-top: -10%;
 }
 
@@ -104,5 +105,20 @@ h2{
 
 .login button[type="submit"]:hover {
   background-color: #0062a3;
+}
+#btn-voltar {
+background-color: #007AC2;
+color: #fff;
+border: none;
+border: 3px;
+padding: 8px;
+cursor: pointer;
+font-weight: bold;
+width: 15%;
+margin-top: -80%;
+margin-left: 2%;
+}
+#btn-voltar:hover {
+background-color: #0062a3;
 }
 </style>
